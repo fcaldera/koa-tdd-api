@@ -35,7 +35,7 @@ describe("routes: articles", () => {
       return chai
         .request(server)
         .get(`${PATH}`)
-        .end((err, res) => {
+        .then((res, err) => {
           should.not.exist(err);
           res.status.should.eql(200);
           res.type.should.eql("application/json");
